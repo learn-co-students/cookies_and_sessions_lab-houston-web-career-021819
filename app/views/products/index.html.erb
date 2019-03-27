@@ -1,0 +1,14 @@
+<h1>Add to Cart</h1>
+
+<%if cart != []%>
+<h3>Your Cart: </h3>
+    <ul>
+        <% cart.each do |item| %>
+            <li><%=item%></li>
+        <%end%>
+    </ul>
+<%end%>
+<%= form_tag ({controller: 'products', action: 'add', method: 'post'}) do %>
+    <input name=product>
+    <input type=submit value='add to cart'>
+<% end %>
